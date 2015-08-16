@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+		</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->	
+		<div class="ui-block-a">
+		<p><img src="images/app2.png" alt="Onion Bhajis With Chutney"/></p>
+		</div>
+	
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Onion Bhajis With Chutney</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Coriander</li>
+				<li>Gram Flour</li>
+				<li>Salt</li>
+				<li>Oil</li>
+				<li>Cumin</li>
+				<li>Baking Powder</li>
+				<li>Onions</li>
+				<li>Coriander</li>
+				<li>Black Onion</li>
+				<li>Muscovado Sugar</li>
+				<li>Red Chile Pepper</li>
+				<li>White Wine Vinegar</li>
+				<li>Mangoes</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>How to make onion bhajis, tasty Indian fritters perfect as a vegan appetizer, served with mango chutney: find out how to prepare it at home.</p>
+		</div>
+	</div>
+	
+	<hr/>
+	<div id="restau_infos">
+			<h3 align="middle">For the chutney</h3>
+			<p align="middle">Lightly toast the coriander seeds, cumin seeds and black onion seeds in a hot, dry pan for 30 seconds.
+			Put the vinegar and sugar in a small pan and heat until the sugar has dissolved then add the toasted seeds, the salt and chile and let bubble for 5 minutes then add the mango and cook very gently for 20 minutes, stirring from time to time, or until very thick, then set aside.</p>
+
+			<h3 align="middle">For the bhajis</h3>
+			<p align="middle">Lightly toast the coriander seeds and cumin seeds in a hot, dry pan.
+			Sift the flour into a bowl and add the toasted seeds, baking powder, salt and grated onions.
+			Add just enough water to make a very thick batter.
+			Heat the oil in a deep pan until bubbles appear on a wooden spoon held in the oil.
+			Drop small balls of the batter into the oil in batches and deep fry for 3 - 4 minutes or until golden brown.
+			Drain on kitchen paper and serve with the mango chutney.</p>
+	
+	</div>		
+			<hr/>
+	
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+	
+	<!-- Create grid -->
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->	
+		<div class="ui-block-a">
+		<p><img src="images/dess1.png" alt="Quick Apricot Cake"/></p>
+		</div>
+	
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Quick Apricot Cake</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Butter</li>
+				<li>Eggs</li>
+				<li>Baking Powder</li>
+				<li>Sugar</li>
+				<li>Flour</li>
+				<li>Apricots</li>
+				<li>Vanilla Pudding Powder</li>
+				<li>Sour Cream</li>
+				<li>Icing Sugar</li>
+				<li>Breadcrumbs</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>Looking for new apricot recipes? Don't miss this easy and quick apricot cake, prepared with one of the most appreciated Summer fruits.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<h3 align="middle">For the base</h3>
+			<p align="middle">Drain the apricots in a sieve, but catch the juice. Mix the butter, sugar, eggs, flour and baking powder to make a smooth batter. Turn the batter into a springform pan, buttered and sprinkled with breadcrumbs. Arrange the apricots evenly on the batter.</p>
+
+			<h3 align="middle">For the filling</h3>
+			<p align="middle">Make up the vanilla pudding according to the package instructions using the apricot juice and sugar, and pour the pudding over the apricots while still hot.
+			(Alternatively, mix the cornstarch and vanilla flavoring with a little of the apricot juice. Bring the remaining juice to a boil. Stir the mixed cornstarch into the boiling juice and boil for one minute. Continue as above)
+			Bake the cake in a preheated oven (190°C) for 35-40 minutes.</p>
+
+			<h3 align="middle">For the topping</h3>
+			<p align="middle">Separate the eggs. Mix the egg yolks with the sugar and sour cream.
+			Beat the egg whites until they form stiff peaks and fold into the egg yolk mixture.
+			Spread on the hot cake and return to the oven for a further 15-20 minutes.
+			Let cool for at least 1 hour before releasing from the springform pan.
+			Dust with confectioners' sugar and serve.</p>
+	</div>		
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

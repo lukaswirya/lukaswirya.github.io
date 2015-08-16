@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->		
+		<div class="ui-block-a">
+		<p><img src="images/dess3.png" alt="Pecan Pie With Cream"/></p>
+		</div>
+		
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Pecan Pie With Cream</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Flour</li>
+				<li>Eggs</li>
+				<li>Sugar</li>
+				<li>Butter</li>
+				<li>Sugar Beet Syrup</li>
+				<li>Brown Sugar</li>
+				<li>Whisky</li>
+				<li>Cream</li>
+				<li>Pecans</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>Pecan pie is a traditional dessert usually served for Thanksgiving or Christmas: here is an easy recipe for a pecan pie with sweet cream.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<h3 align="middle">For the pastry</h3>
+			<p align="middle">Mix the flour with the sugar and a pinch of salt and form into a mound on the work surface.
+			Make a well in the centre and break the egg into the well.
+			Dot the butter around the edge.
+			Using a knife, chop all the ingredients together to form breadcrumbs, then quickly work by hand to form a smooth pastry.
+			Shape into a ball, wrap in cling film and put in the refrigerator for around 30 minutes. 2 Heat the oven to 200°C (180°C in a fan oven), gas 6 and butter a tart tin.
+			Roll out the pastry on a floured work surface to a thickness of approx. 4 mm and place it in the tart tin.
+			Cut off any overhanging edges and cut leaf shapes out of the leftover pastry. Press the base and sides into the tin well and prick all over with a fork.</p>
+
+			<h3 align="middle">For the filling</h3>
+			<p align="middle">Beat together the syrup, sugar, butter, eggs, whisky and a pinch of salt. Roughly chop 100 g of the pecan nuts and mix through the filling. Pour this into the pastry base and top with the rest of the nuts.
+			Bake in the oven for around 50 minutes. If the pie starts to brown too much, cover with aluminium foil.
+			Bake the pastry leaves for approx. 10 minutes.  
+			Remove the pie and leaves from the oven and allow to cool.
+			Whip the cream until stiff and pipe small blobs onto the cake.
+			Place a leaf in each blob of cream and serve.</p>
+	</div>			
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

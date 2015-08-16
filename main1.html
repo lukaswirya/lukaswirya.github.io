@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->		
+		<div class="ui-block-a">
+		<p><img src="images/main1.png" alt="Lamb Rack With A Herb Crust And Vegetables"/></p>
+		</div>
+	
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Lamb Rack With A Herb Crust And Vegetables</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Lamb</li>
+				<li>Parmesan</li>
+				<li>Thyme</li>
+				<li>Rosemary</li>
+				<li>Butter</li>
+				<li>Beans</li>
+				<li>Potato</li>
+				<li>Zucchini</li>
+				<li>Vegetable Oil</li>
+				<li>Bread</li>
+				<li>Parsley</li>
+				<li>Peppermint</li>
+				<li>Shallot</li>
+				<li>Eggs</li>
+				<li>Savoury</li>
+				<li>Mustard</li>
+				<li>Leek</li>
+				<li>Peas</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>How to prepare a lamb of rack for Easter? Here is an easy recope to roast a lamb rack, the perfect main course if you're planning an Easter meal with family.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<p align="middle">
+			Heat the oven to 150°C (130°C in a fan oven), gas 2.
+			Cut the ends of the ribs off cleanly and season with ground black pepper.
+			Mix together the breadcrumbs, parmesan, herbs, shallots, half the butter and the egg.
+			Blanche the beans and the savoury in boiling salt water for 5-7 minutes.
+			Drain and quench in ice cold water.
+			Fry the meat in hot oil on a roasting tin, season with salt and roast for 30-35 minutes.
+			Season the potatoes with salt and ground black pepper and fry in 2 tbsp hot oil with the remaining rosemary sprig for around 10 minutes until golden brown.
+			Remove the meat from the oven, brush with mustard and spread the herb mixture on top.
+			Roast for a further 5 minutes at 220°C (200°C in a fan oven), gas 7.
+			Then cover with tin foil and leave to rest.
+			Fry the courgette and the leek in the remaining butter, add the peas and beans and season with salt and ground black pepper.
+			Serve the meat, vegetables and potatoes on a preheated platter.
+			</p>
+	</div>			
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

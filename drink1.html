@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->		
+		<div class="ui-block-a">
+		<p><img src="images/drink1.png" alt="Irish Cream Coffee"/></p>
+		</div>
+		
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Irish Cream Coffee</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Whipping Cream</li>
+				<li>Brown Sugar</li>
+				<li>Irish Whiskey</li>
+				<li>Coffee</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>An easy recipe for Irish cream coffee, an alcoholic drink prepared with coffee and whisky, added with a soft cream.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<p align="middle">Lightly whip the cream - it should not be stiff.</p>
+			<p align="middle">Lightly heat the whiskey, but do not let it boil.</p>
+			<p align="middle">Stir in the brown sugar, stirring until dissolved, and pour into heat-resistant glasses.</p>
+			<p align="middle">Fill the glasses just over half-full with hot coffee.</p>
+			<p align="middle">Slowly add the lightly whipped cream by pouring it over the back of a spoon.</p>
+			<p align="middle">Decorate the glasses with a sugared rim if you wish.</p>
+			<p align="middle">To do this, whisk 1 egg white and put it on a shallow plate.</p>
+			<p align="middle">Put a little sugar on another plate.</p>
+			<p align="middle">Dip the rim of each glass first in the egg white and then in the sugar.</p>
+	</div>			
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

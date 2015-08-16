@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->		
+		<div class="ui-block-a">
+		<p><img src="images/drink3.png" alt="Bloody Mary"/></p>
+		</div>
+		
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Bloody Mary</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Vodka</li>
+				<li>Salt</li>
+				<li>Tabasco</li>
+				<li>Celery</li>
+				<li>Tomato Juice</li>
+				<li>Worcester Sauce</li>
+				<li>Lemon Juice</li>
+				<li>Black Pepper</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>The world's most complex cocktail? Before saying that, try to make bloody mary with this easy recipe.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<p align="middle">Making this cocktail is relatively simple.</p>
+			<p align="middle">Pour the vodka into a shaker along with the tomato juice and lemon juice.</p>
+			<p align="middle">Shake vigorously and add Tabasco, the Worcester sauce, salt and pepper.</p>
+			<p align="middle">In case you don’t have a cocktail shaker, stir the ingredients slowly in the same order: it’ll take more time, but the final result will be the same.</p>
+			<p align="middle">Along with the classic celery garnish, you can also add a carrot, a mint branch or other vegetables.</p>
+			<p align="middle">If you serve the drink in a tall tumbler, add a few ice cubes to the bottom of the glass.</p>
+	</div>			
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>

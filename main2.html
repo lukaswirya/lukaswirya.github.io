@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html>  
+<!-- Created by Wirya Adi Sianyoto -->
+<!-- Student ID: 212555894 -->
+<!-- All the image in this website are found in google as a reference -->
+<head> 
+	<meta charset="UTF-8">
+	<title>TheSavoury</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<!-- Create the header -->
+	<div data-role="header"> 
+		<h1>TheSavoury</h1>
+	</div> 
+	
+	<!-- Create the content of the page -->
+	<div data-role="content">
+	<div id="branding">
+		<h1>TheSavoury</h1>
+	</div>
+		
+	<!-- Create grid -->		
+	<div class="ui-grid-b" id="restau_infos">	
+		<!-- The first block (left) -->		
+		<div class="ui-block-a">
+		<p><img src="images/main2.png" alt="Rosemary Roasted Chicken"/></p>
+		</div>
+	
+		<!-- The second block (middle) -->
+		<div class="ui-block-b">
+		<h1>Rosemary Roasted Chicken</h1>
+		<p><strong>~TheSavoury~</strong></p>
+		<p>Ingredients</p>
+			<ul> 
+				<li>Milk</li>
+				<li>Butter</li>
+				<li>Parsley</li>
+				<li>Egg</li>
+				<li>Wheatmeal</li>
+				<li>Leek</li>
+				<li>Rosemary</li>
+				<li>Chicken</li>
+			</ul>
+		</div>		
+		
+		<!-- The third block (right)-->
+		<div class="ui-block-c" id="restau_infos">
+		<p>Try this roast with chicken and special stuffing with rosemary, parsley and of course butter.</p>
+		</div>
+		
+	</div>
+	<hr/>
+	<div id="restau_infos">
+			<p align="middle">
+			Boil the milk, pour it over the wheatmeal and let soak, covered.??
+			Heat the butter and fry the leek until golden brown. Stir in the parsley. Add the milk and wheatmeal and bring to a boil quickly. Let the stuffing cool slightly and mix in 1 tsp rosemary, 1/2 tsp salt, 1 pinch pepper and the egg.??
+			Heat the oven to 220C (200C fan) 425F, gas 7.?
+			Spoon the stuffing into the cavity of the chicken and sew up with kitchen yarn. Rub the remaining rosemary with a little salt and pepper into the skin.??
+			Lay the chicken breast downwards on a wire rack in a roasting pan. Dot the chicken with small pieces of butter and roast for approx. 25 minutes. Turn the chicken over and roast for a further 30-35 minutes until done.?</p>			
+	</div>			
+			<hr/>
+	<div id="notation">	
+	<!-- Creating a form that shows the choice to rate the menu -->
+	<form>
+	<label for="select-choice-0" class="select"><h2> User rating </h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one"> Not good at all </option>
+		   <option value="two" class="two">Average </option>
+		   <option value="three" class="three">Pretty good </option>
+		   <option value="four" class="four"> Excellent </option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>
